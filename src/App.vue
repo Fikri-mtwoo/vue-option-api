@@ -18,6 +18,15 @@
     <div>{{ pesan }}</div>
     <hr>
     <input type="text" v-model="pesan"><br>
+
+  <!-- conditional rendering -->
+  <button @click="status = !status">toggle</button>
+    <div v-if="status">kondisi benar</div>
+    <div v-else>kondisi salah</div>
+    <div v-if="grade === 'A'">A</div>
+    <div v-else-if="grade === 'B'">B</div>
+    <div v-else-if="grade === 'C'">C</div>
+    <div v-else>Not A/B/C</div>
 </template>
 <script>
 export default {
@@ -25,7 +34,9 @@ export default {
     return {
       message : "hello word",
       count : 0,
-      pesan : "hello"
+      pesan : "hello",
+      status : true,
+      grade: "B"
     }
   },
   methods : {
