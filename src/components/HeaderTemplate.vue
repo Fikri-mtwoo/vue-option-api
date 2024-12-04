@@ -2,6 +2,13 @@
     <div id="pesan">{{ message }}</div>
 
     <button @click="message='hello vue'">rubah</button>
+
+    <!-- v-once build in vue yang berfungsi untuk render tampilan hanya 1 kali -->
+    <div v-once>{{ message }}</div>
+    <button @click="message='hello vue'">rubah</button>
+
+    <!-- v-html build in vue yang berfungsi untuk merender tag html-->
+     <div v-html="textMerah"></div>
 </template>
 <script>
     export default {
@@ -13,7 +20,8 @@
         },
         data() {
             return {
-                message : "hello word"
+                message : "hello word",
+                textMerah : `<span style="color:red">merah</span>`
             }
         },
         beforeCreate () {
