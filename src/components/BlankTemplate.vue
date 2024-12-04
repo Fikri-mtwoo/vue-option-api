@@ -1,8 +1,10 @@
 <template>
-    <div>{{ total }}</div>
-    <div>{{ banding }}</div>
+    <div>total : {{ total }}</div>
+    <div>perbandingan : {{ banding }}</div>
+    <div>diskon : {{ discount }}</div>
     <input type="number" v-model="numb1">
     <input type="number" v-model="numb2">
+    <button @click="diskon()">Diskon</button>
 </template>
 <script>
 export default{
@@ -22,6 +24,20 @@ export default{
             }else{
                 return "angka 2 lebih besar dari angka 1"
             }
+        },
+        discount : {
+            get(){
+                return this.numb1 + this.numb2
+            },
+            set(newVariable){
+                this.numb1 -= newVariable
+                this.numb2 -= newVariable
+            }
+        }
+    },
+    methods : {
+        diskon(){
+            this.discount = 500
         }
     }
 }
