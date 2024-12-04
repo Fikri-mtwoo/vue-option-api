@@ -27,6 +27,12 @@
     <div v-else-if="grade === 'B'">B</div>
     <div v-else-if="grade === 'C'">C</div>
     <div v-else>Not A/B/C</div>
+
+  <!-- list rendering -->
+  <ol>
+    <li v-for="todo in todos" :key="todo.id">{{ todo.nama }}</li>
+    <li v-for="(todo, index) in todos" :key="todo.id">index ke - {{ index }} {{ todo.nama }}</li>
+  </ol>
 </template>
 <script>
 export default {
@@ -36,7 +42,12 @@ export default {
       count : 0,
       pesan : "hello",
       status : true,
-      grade: "B"
+      grade: "B",
+      todos : [
+        {id : 1, nama: "dodi"},
+        {id : 2, nama: "toni"},
+        {id : 3, nama: "dodo"},
+      ]
     }
   },
   methods : {
