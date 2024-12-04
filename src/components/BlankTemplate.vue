@@ -5,13 +5,16 @@
     <input type="number" v-model="numb1">
     <input type="number" v-model="numb2">
     <button @click="diskon()">Diskon</button>
+    <hr>
+    <input v-model="message">
 </template>
 <script>
 export default{
     data() {
         return {
             numb1 : 0,
-            numb2 : 0
+            numb2 : 0,
+            message : ""
         }
     },
     computed : {
@@ -38,6 +41,11 @@ export default{
     methods : {
         diskon(){
             this.discount = 500
+        }
+    },
+    watch : {
+        message(oldval, newVal){
+            console.log(`${oldval} ${newVal}`)
         }
     }
 }
