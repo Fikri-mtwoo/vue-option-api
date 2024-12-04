@@ -1,8 +1,8 @@
 <template>
   <h1>ini template parent</h1>
-  <!-- <HeaderTemplate title="hello word" /> -->
+  <HeaderTemplate title="hello word" />
   <!-- <HeaderTemplate :title="message" /> -->
-   <HeaderTemplate v-for="buah in buahs" :key="buah" :title="buah"/>
+   <!-- <HeaderTemplate v-for="buah in buahs" :key="buah" :title="buah"/> -->
   <hr>
   <!-- <BasicTemplate /> -->
 </template>
