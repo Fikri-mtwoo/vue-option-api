@@ -1,9 +1,10 @@
 <template>
   <h1>ini template parent</h1>
-  <HeaderTemplate title="hello word" />
-  <HeaderTemplate :title="message" />
+  <!-- <HeaderTemplate title="hello word" /> -->
+  <!-- <HeaderTemplate :title="message" /> -->
+   <HeaderTemplate v-for="buah in buahs" :key="buah" :title="buah"/>
   <hr>
-  <BasicTemplate />
+  <!-- <BasicTemplate /> -->
 </template>
 
 <script>
@@ -16,7 +17,8 @@
     },
     data() {
       return {
-        message : "Title header"
+        message : "Title header",
+        buahs : ["jeruk", "apel", "melon", "semangka"]
       }
     }
   }
