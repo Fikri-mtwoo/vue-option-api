@@ -6,7 +6,10 @@
     <input type="number" v-model="numb2">
     <button @click="diskon()">Diskon</button>
     <hr>
-    <input v-model="message">
+    <input v-model="message"><br>
+    <span :class="status ? 'success' : 'danger' ">Hello vue</span><br>
+    <span :class="[fc, fz]">Hello vue</span><br>
+    <button @click="status = !status">Change</button>
 </template>
 <script>
 export default{
@@ -14,7 +17,10 @@ export default{
         return {
             numb1 : 0,
             numb2 : 0,
-            message : ""
+            message : "",
+            status : true,
+            fc : 'danger',
+            fz : 'fz-12'
         }
     },
     computed : {
@@ -50,3 +56,14 @@ export default{
     }
 }
 </script>
+<style scoped>
+.success{
+    color: green;
+}
+.danger{
+    color: red;
+}
+.fz-12 {
+    font-size: 12px;
+}
+</style>
